@@ -84,17 +84,210 @@
       </div>
     </header>
 
- <!-- INICIO DO COMENTARIO -->
-        <section class="comments py-4">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-    
+ <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <style type="text/css" id="wp-custom-css">
+        @font-face {
+            font-family: "Font Awesome 5 Free";
+            font-style: normal;
+            font-weight: 400;
+            font-display: auto;
+            src: url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.eot);
+            src: url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.woff2) format("woff2"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.woff) format("woff"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.ttf) format("truetype"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.svg#fontawesome) format("svg")
+        }
+
+        .far {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400
+        }
+
+        #comentarios_face {
+            font-family: Arial;
+            font-size: 14px;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #E9EBEE;
+        }
+
+        .titulo_comentario {
+            font-weight: bold;
+            border-bottom: 1px solid #E9EBEE;
+            display: block;
+            padding-bottom: 6px;
+        }
+
+        .perfil {
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            line-height: 20px;
+        }
+
+            .perfil .nome {
+                color: #365899;
+                font-weight: bold;
+            }
+
+                .perfil .nome .link-name:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+        /*Ao invés de acessar a foto por cascata (.nome img), inseri uma classe diretamente na imagem para facilitar as alterações*/
+        .img-perfil {
+            float: left;
+            /*padding-right: 10px;  essa propriedade estava colocando espaço dentro da imagem, fazendo ela ficar torta ao usar border-radius*/
+            margin-right: 10px;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50% !important;
+        }
+
+        /* .perfil img {
+            width: 60px !important;
+            height: 60px;
+        } não é mais necessário pois criamos uma classe img-perfil*/
+
+        .perfil p {
+            margin: 0;
+            margin-left: 60px;
+            margin-bottom: 0px;
+        }
+
+        .infos {
+            font-size: 11px;
+            color: #90949c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .perfil2 {
+            padding-left: 9px;
+            border-left: 1px solid #E9EBEE;
+            margin-left: 50px;
+            padding-bottom: 0;
+        }
+
+        /*Adicionei essas classes para relalizar as mudanças que você pediu*/
+        .container-msg {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            background: #F1F2F6;
+            padding: 3px 10px;
+            border-radius: 25px;
+        }
+
+        .link {
+            cursor: pointer;
+            text-decoration: none;
+            color: #888888;
+        }
+
+            .link:hover {
+                text-decoration: underline;
+            }
+
+        .curtir {
+            cursor: pointer;
+            text-decoration: none;
+            color: #888888 !important;
+            font-weight: bold;
+            font-size: 12px !important;
+        }
+
+            .curtir:hover {
+                text-decoration: underline !important;
+            }
+
+        .grp-reactions {
+            display: flex;
+            align-items: center;
+            padding: 2px 4px;
+            border: 2px solid #eaebef;
+            border-radius: 20px;
+            transform: translateY(-6px);
+            background: white;
+        }
+
+        .lbl-reactions {
+            font-size: 13px;
+            /*padding: 0 0 0 5px;*/
+        }
+
+        .ativo {
+            color: #4080ff !important;
+        }
+
+        [type=button]:focus, [type=button]:hover, [type=submit]:focus, [type=submit]:hover, button:focus, button:hover {
+            color: gray;
+        }
+
+        button.link {
+            display: inline-block;
+            font-weight: bold;
+            padding: 0 !important;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid #c36;
+            font-size: 12px !important;
+        }
+
+        button:focus {
+            outline: 0 !important;
+        }
+
+        .imgcurtir {
+            left: -7px;
+            position: relative;
+            z-index: -1;
+        }
+
+        .link-name-mark {
+            color: #365899 !important;
+            font-weight: normal;
+        }
+
+            .link-name-mark:hover {
+                text-decoration: underline !important;
+                cursor: pointer;
+            }
+
+        .hora {
+            color: #90949C;
+        }
+
+            .hora:hover {
+                text-decoration: underline !important;
+                cursor: pointer;
+            }
+    </style>
+    <div class="elementor-widget-container">
+        <div id="comentarios_face">
+            <span class="titulo_comentario">34 comentários</span>
+            <!-- NÃO MEXA AQUI EM CIMA-->
+            <!-- INICIO DO COMENTARIO -->
             <div class="perfil" style="">
                 <div>
                     <span class="imagem">
                         <noscript>
-                          
                             <img src="https://i.imgur.com/Dhk2G1G.jpg">
                         </noscript>
                         <img class=" ls-is-cached lazyloaded img-perfil" src="https://i.imgur.com/Dhk2G1G.jpg" data-src="https://i.imgur.com/Dhk2G1G.jpg">
@@ -420,6 +613,47 @@
                     </span>
                 </div>
             </div>
+            <!-- FIM DO COMENTARIO -->
+            <!-- NÃO MEXA AQUI EM BAIXO -->
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <script>
+        $.get("https://ipinfo.io/json", function (response) {
+            $("#ip").html("IP: " + response.ip);
+            //$("#address").html(response.city + ", em " + response.region);
+            $("#address").html(response.city);
+            $("#details").html(JSON.stringify(response, null, 4));
+        }, "jsonp");
+    </script>
+    <script>
+        $(".link").on("click", function () {
+            if ($(this).hasClass('ativo')) {
+                /*Remove a classe*/
+                $(this).removeClass('ativo');
+                /*Pega o valor atual das curtidas relacionadas ao mesmo comentário e diminui um*/
+                var idbtn = $(this).attr("id");
+                var valor = $(".lbl-reactions[for='" + idbtn + "']").text();
+                var num = parseInt(valor);
+                num -= 1;
+                /*Altera o texto*/
+                $(".lbl-reactions[for='" + idbtn + "']").text(num);
+            } else {
+                /*Adiciona a classe*/
+                $(this).addClass('ativo');
+                /*Pega o valor atual das curtidas relacionadas ao mesmo comentário e adiciona um*/
+                var idbtn = $(this).attr("id");
+                var valor = $(".lbl-reactions[for='" + idbtn + "']").text();
+                var num = parseInt(valor);
+                num += 1;
+                /*Altera o texto*/
+                $(".lbl-reactions[for='" + idbtn + "']").text(num);
+            }
+        });
+    </script>
+</body>
+</html>
+
             
             <!-- Botão 2 -->
             <div id="cta2" class="mt-4 d-none">
