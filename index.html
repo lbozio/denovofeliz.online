@@ -84,575 +84,371 @@
       </div>
     </header>
 
- <style>
-       * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    </style>
-</head>
-<body>
-    <style type="text/css" id="wp-custom-css">
-        @font-face {
-            font-family: "Font Awesome 5 Free";
-            font-style: normal;
-            font-weight: 400;
-            font-display: auto;
-            src: url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.eot);
-            src: url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.woff2) format("woff2"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.woff) format("woff"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.ttf) format("truetype"),url(//bumbumdosdreams.site/wp-content/plugins/elementor/assets/lib/font-awesome/css/../webfonts/fa-regular-400.svg#fontawesome) format("svg")
-        }
-
-        .far {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 400
-        }
-
-        #comentarios_face {
-            font-family: Arial;
-            font-size: 14px;
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid #E9EBEE;
-        }
-
-        .titulo_comentario {
-            font-weight: bold;
-            border-bottom: 1px solid #E9EBEE;
-            display: block;
-            padding-bottom: 6px;
-        }
-
-        .perfil {
-            display: block;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            line-height: 20px;
-        }
-
-            .perfil .nome {
-                color: #365899;
-                font-weight: bold;
-            }
-
-                .perfil .nome .link-name:hover {
-                    text-decoration: underline;
-                    cursor: pointer;
-                }
-
-        /*Ao invés de acessar a foto por cascata (.nome img), inseri uma classe diretamente na imagem para facilitar as alterações*/
-        .img-perfil {
-            float: left;
-            /*padding-right: 10px;  essa propriedade estava colocando espaço dentro da imagem, fazendo ela ficar torta ao usar border-radius*/
-            margin-right: 10px;
-            width: 50px !important;
-            height: 50px !important;
-            border-radius: 50% !important;
-        }
-
-        /* .perfil img {
-            width: 60px !important;
-            height: 60px;
-        } não é mais necessário pois criamos uma classe img-perfil*/
-
-        .perfil p {
-            margin: 0;
-            margin-left: 60px;
-            margin-bottom: 0px;
-        }
-
-        .infos {
-            font-size: 11px;
-            color: #90949c;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .perfil2 {
-            padding-left: 9px;
-            border-left: 1px solid #E9EBEE;
-            margin-left: 50px;
-            padding-bottom: 0;
-        }
-
-        /*Adicionei essas classes para relalizar as mudanças que você pediu*/
-        .container-msg {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .group {
-            display: flex;
-            flex-direction: column;
-            background: #F1F2F6;
-            padding: 3px 10px;
-            border-radius: 25px;
-        }
-
-        .link {
-            cursor: pointer;
-            text-decoration: none;
-            color: #888888;
-        }
-
-            .link:hover {
-                text-decoration: underline;
-            }
-
-        .curtir {
-            cursor: pointer;
-            text-decoration: none;
-            color: #888888 !important;
-            font-weight: bold;
-            font-size: 12px !important;
-        }
-
-            .curtir:hover {
-                text-decoration: underline !important;
-            }
-
-        .grp-reactions {
-            display: flex;
-            align-items: center;
-            padding: 2px 4px;
-            border: 2px solid #eaebef;
-            border-radius: 20px;
-            transform: translateY(-6px);
-            background: white;
-        }
-
-        .lbl-reactions {
-            font-size: 13px;
-            /*padding: 0 0 0 5px;*/
-        }
-
-        .ativo {
-            color: #4080ff !important;
-        }
-
-        [type=button]:focus, [type=button]:hover, [type=submit]:focus, [type=submit]:hover, button:focus, button:hover {
-            color: gray;
-        }
-
-        button.link {
-            display: inline-block;
-            font-weight: bold;
-            padding: 0 !important;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            background-color: transparent;
-            border: 1px solid #c36;
-            font-size: 12px !important;
-        }
-
-        button:focus {
-            outline: 0 !important;
-        }
-
-        .imgcurtir {
-            left: -7px;
-            position: relative;
-            z-index: -1;
-        }
-
-        .link-name-mark {
-            color: #365899 !important;
-            font-weight: normal;
-        }
-
-            .link-name-mark:hover {
-                text-decoration: underline !important;
-                cursor: pointer;
-            }
-
-        .hora {
-            color: #90949C;
-        }
-
-            .hora:hover {
-                text-decoration: underline !important;
-                cursor: pointer;
-            }
-    </style>
-    <div class="elementor-widget-container">
-        <div id="comentarios_face">
-            <span class="titulo_comentario">34 comentários</span>
-            <!-- NÃO MEXA AQUI EM CIMA-->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/Dhk2G1G.jpg">
-                        </noscript>
-                        <img class=" ls-is-cached lazyloaded img-perfil" src="https://i.imgur.com/Dhk2G1G.jpg" data-src="https://i.imgur.com/Dhk2G1G.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Clara Alves</a></span>
-                            <span>Marcelaa! Você está vendendo esses treinos para glúteos muito barato pelos os resultados que eles trazem...</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button class="link" id="cmt1" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir" id="responder">Responder</a> ·
-                                <label class="hora">1h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt1" class="lbl-reactions">65</span>
-                            </span>
-                        </span>
-                    </span>
+     <section class="comments py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="fb-comments" style="margin-top: 5px;">
+              <div class="fb-comments-header">
+                <span>21 comentarios</span>
+              </div>
+              <div class="fb-comments-wrapper" id="2">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m2.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Valesca Silva</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Amei vou fazer hoje mesmo pois estou em processo de emagrecimento. Muito obrigada 😘</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>8</likes>
+                        
+                        <date>4 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="3">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m3.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Vitória Pereira</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Ele também me ajudou perdi 22kg obrigado, e ajuda até hoje com essas receitas deliciosas</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>9</likes>
+                        
+                        <date>5 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="4">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m4.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Mariana Martins</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Esse vídeo mudou minha vida, já são 20 kilos a menos em 4 meses ,agradecida</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>11</likes>
+                        
+                        <date>12 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="5">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m5.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Juliana Castro</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Tomei essa vitamina durante 1 mês, acompanhada da dieta de açúcar e carboidratos, perdir 5 quilos, e me sentia bem melhor, faz um ano, agora vou voltar a tomar novamente.</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>15</likes>
+                        
+                        <date>19 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="6">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m6.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Isabella Lopes</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Estou feliz, a 7 meses atrás eu estava com 78kg e hoje estou com 54kg até postei a respeito no meu perfil aqui no face o antes e depois 😘😘😘</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>17</likes>
+                        
+                        <date>24 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="7">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m7.jpeg"></td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Roberta Gomes</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Realmente funciona, minha barriga tem diminuído a cada dia. Obrigada por compartilhar 🥰</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>18</likes>
+                        
+                        <date>26 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="fb-comments-wrapper" id="9">
+                <table class="fb-comments-comment">
+                  <tbody>
+                    <tr>
+                      <td rowspan="3" class="fb-comments-comment-img"><img
+                          src="./assets/img/comentarios/m11.jpeg">
+                      </td>
+                      <td>
+                        <font class="fb-comments-comment-name">
+                          <name>Rafaela Souza</name>
+                        </font>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-text">Emagrece mesmo gente receita testada e aprovada</td>
+                    </tr>
+                    <tr>
+                      <td class="fb-comments-comment-actions">
+                        <like>Curtir</like>
+                        ·
+                        <reply>Responder</reply>
+                        ·
+                        <likes>22</likes>
+                        
+                        <date>39 min</date>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button class="fb-comments-loadmore" onclick="javascript:loadMore();">Carregar mais 5 comentários</button>
+              <div style="display:none" id="more">
+                <div class="fb-comments-wrapper">
+                  <table class="fb-comments-comment" id="10">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m12.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Ana Sofia</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Maravilhosa melhor de todas fez 7dias tomando e 7 klos já conseguir eliminar tô muito feliz obrigado 😍😍😍</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>41</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img style="background: url(https://i.imgur.com/M5zZNMv.jpg);">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/M5zZNMv.jpg" data-src="https://i.imgur.com/M5zZNMv.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Ana Campos</a></span>
-                            <span>Gente, realmente funciona!! Estou impressionada!!</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt2" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-
-                                <label class="hora">1h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt2" class="lbl-reactions">11</span>
-                            </span>
-                        </span>
-                    </span>
+                <div class="fb-comments-wrapper" id="11">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m15.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Laura Flores</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Eu já estou tomando, já eliminei 7 kls, já fez muita diferença, minhas roupas estavam todas apertadas,  ágora já estão largas, estou num pós operatório de coluna por isso engordei muito 15 Kg, estava sentindo muita dor agora amenizou muito depois que emagreci já consigo andar mais q antes 🙏🙏🙏🙏🙏🙏</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>40</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/eM9uJvs.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/eM9uJvs.jpg" data-src="https://i.imgur.com/eM9uJvs.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Clara Martins</a></span>
-                            <span>Nossaaaaa, muito bom esses treinos, vale super a pena</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt3" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">1h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt3" class="lbl-reactions">27</span>
-                            </span>
-                        </span>
-                    </span>
+                <div class="fb-comments-wrapper" id="12">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m16.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Daniela Costa</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Muito Obrigada tem me ajudado e muito,Adorei ...Durmo super bem e vendo resultado ..🌹🥰🙋</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>47</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/r1Nzi42.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/r1Nzi42.jpg" data-src="https://i.imgur.com/r1Nzi42.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Rebeca Godoi</a></span>
-                            <span>Simples e objetivo, sem enrolação, parabéns Marcela</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt4" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">3h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt4" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
+                <div class="fb-comments-wrapper" id="13">
+                  <table class="fb-comments-comment">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m17.jpeg"></td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Juliana Dias</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Em duas semanas comecei a ver resultados, muito bom</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>50</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/ZUCQqPu.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/ZUCQqPu.jpg" data-src="https://i.imgur.com/ZUCQqPu.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Rafaela Alves</a></span>
-                            <span>Como não tinha visto isso antes?? Chocada!</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt5" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">2h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt5" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
+                <div class="fb-comments-wrapper">
+                  <table class="fb-comments-comment" id="14">
+                    <tbody>
+                      <tr>
+                        <td rowspan="3" class="fb-comments-comment-img"><img
+                            src="./assets/img/comentarios/m18.jpeg">
+                        </td>
+                        <td>
+                          <font class="fb-comments-comment-name">
+                            <name>Isabelle Correia</name>
+                          </font>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-text">Meu irmão perdeu 6 kl em 15 dias... vou começar hj rsrs</td>
+                      </tr>
+                      <tr>
+                        <td class="fb-comments-comment-actions">
+                          <like>Curtir</like>
+                          ·
+                          <reply>Responder</reply>
+                          ·
+                          <likes>66</likes>
+                          
+                          <date>1 h</date>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
+              </div>
             </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/Gy0e7GA.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/Gy0e7GA.jpg" data-src="https://i.imgur.com/Gy0e7GA.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Gabriela Morais</a></span>
-                            <span>@rebecabarbosa amiga vê isso logo kkkk, é mt bomm</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt6" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">2h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt6" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO || ESSE COMENTÁRIO EH UMA RESPOSTA -->
-            <div class="perfil perfil2">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/GC6b6qe.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/GC6b6qe.jpg" data-src="https://i.imgur.com/GC6b6qe.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Rebeca Barbosa</a></span>
-                            <span><a class="link-name-mark">Gabriela Morais</a> Acabei de ver, vale super apena, não sabia desses segredos</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt7" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">3 min</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt7" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <!-- FIM DO COMENTARIO RESPOSTA -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/Qxycjx9.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/Qxycjx9.jpg" data-src="https://i.imgur.com/Qxycjx9.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Alícia Barros</a></span>
-                            <span>Depois que fiz esse método perdi a vergonha de ficar de biquini na praia, finalmente!!</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt8" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">2h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt8" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/qrr6krW.jpg">
-                        </noscript>
-                        <img class="lazyloaded img-perfil" src="https://i.imgur.com/qrr6krW.jpg" data-src="https://i.imgur.com/qrr6krW.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Lívia Batista</a></span>
-                            <span>Meu namorado viciou na minha bunda hahaaha</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt9" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">4h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt9" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/gOTadwt.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/gOTadwt.jpg" data-src="https://i.imgur.com/gOTadwt.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Cecília Cardoso</a></span>
-                            <span>Em 10 semanas já me senti outra pessoa, muito bom, recomendo!</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt10" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">5h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt10" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- INICIO DO COMENTARIO -->
-            <div class="perfil" style="">
-                <div>
-                    <span class="imagem">
-                        <noscript>
-                            <img src="https://i.imgur.com/RVpxkuT.jpg">
-                        </noscript>
-                        <img class=" lazyloaded img-perfil" src="https://i.imgur.com/RVpxkuT.jpg" data-src="https://i.imgur.com/RVpxkuT.jpg">
-                    </span>
-                    <span class="container-msg">
-                        <span class="group">
-                            <span class="nome"><a class="link-name">Maria Duarte</a></span>
-                            <span>Só digo uma coisa… FAÇAM! vocês vão amar, já estou contando para todo mundo aqui de <span id="address"></span>!</span>
-                        </span>
-                        <span class="infos">
-                            <span>
-                                <button id="cmt11" class="link" style="background: transparent; border: none;">Curtir</button> ·
-                                <a class="curtir">Responder</a> ·
-                                <label class="hora">5h</label>
-                            </span>
-                            <span class="grp-reactions">
-                                <img src="https://i.imgur.com/S3EfNqk.png">
-                                <img class="imgcurtir" src="https://i.imgur.com/8o0mZRA.png">
-                                <span for="cmt11" class="lbl-reactions">63</span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <!-- FIM DO COMENTARIO -->
-            <!-- NÃO MEXA AQUI EM BAIXO -->
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
-    <script>
-        $.get("https://ipinfo.io/json", function (response) {
-            $("#ip").html("IP: " + response.ip);
-            //$("#address").html(response.city + ", em " + response.region);
-            $("#address").html(response.city);
-            $("#details").html(JSON.stringify(response, null, 4));
-        }, "jsonp");
-    </script>
-    <script>
-        $(".link").on("click", function () {
-            if ($(this).hasClass('ativo')) {
-                /*Remove a classe*/
-                $(this).removeClass('ativo');
-                /*Pega o valor atual das curtidas relacionadas ao mesmo comentário e diminui um*/
-                var idbtn = $(this).attr("id");
-                var valor = $(".lbl-reactions[for='" + idbtn + "']").text();
-                var num = parseInt(valor);
-                num -= 1;
-                /*Altera o texto*/
-                $(".lbl-reactions[for='" + idbtn + "']").text(num);
-            } else {
-                /*Adiciona a classe*/
-                $(this).addClass('ativo');
-                /*Pega o valor atual das curtidas relacionadas ao mesmo comentário e adiciona um*/
-                var idbtn = $(this).attr("id");
-                var valor = $(".lbl-reactions[for='" + idbtn + "']").text();
-                var num = parseInt(valor);
-                num += 1;
-                /*Altera o texto*/
-                $(".lbl-reactions[for='" + idbtn + "']").text(num);
-            }
-        });
-    </script>
-</body>
-</html>
 
             
             <!-- Botão 2 -->
