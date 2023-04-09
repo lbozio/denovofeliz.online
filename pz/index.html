@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
   <head>
+    <title>Programa D21</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://scripts.converteai.net" />
+    <link rel="dns-prefetch" href="https://images.converteai.net" />
+    <link rel="dns-prefetch" href="https://cdn.converteai.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://api.vturb.com.br" />
+    <link rel="stylesheet" href="css/s.css" />
     <link
       rel="preload"
       href="https://scripts.converteai.net/4952b130-285d-410f-a8df-fa363bee1975/players/62cdc68f2001f0000bdde431/player.js"
@@ -21,22 +29,6 @@
       href="https://cdn.converteai.net/4952b130-285d-410f-a8df-fa363bee1975/62cdc6002001f0000bdde430/playlist.m3u8"
       as="fetch"
     />
-    <link rel="dns-prefetch" href="https://cdn.converteai.net" />
-    <link rel="dns-prefetch" href="https://scripts.converteai.net" />
-    <link rel="dns-prefetch" href="https://images.converteai.net" />
-    <link rel="dns-prefetch" href="https://api.vturb.com.br" />
-    <meta name="robots" content="noindex" />
-    <meta charset="utf-8" />
-
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Programa D21</title>
-    <link rel="stylesheet" href="css/s.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -64,10 +56,13 @@
       href="https://cdn.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/62bf922e04d7e7000b83b3d1/playlist.m3u8"
       as="fetch"
     />
-    <link rel="dns-prefetch" href="https://cdn.converteai.net" />
-    <link rel="dns-prefetch" href="https://scripts.converteai.net" />
-    <link rel="dns-prefetch" href="https://images.converteai.net" />
-    <link rel="dns-prefetch" href="https://api.vturb.com.br" />
+    <meta name="robots" content="noindex" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Meta Pixel Code -->
     <script>
@@ -889,24 +884,24 @@
           </div>
         </section>
       </div>
-      <div class="px-sm-2 closen">
-        <br />
-        <a
-          href="https://checkout.payt.com.br/2794f6a20ee0685f4006210f40799acd"
-          class="btn pulse max-w-lg-50 mx-auto"
-        >
-          QUERO OBTER ACESSO
-        </a>
-        <br />
+      <div class="esconder">
+        <div class="px-sm-2 closen">
+          <br />
+          <a
+            href="https://checkout.payt.com.br/2794f6a20ee0685f4006210f40799acd"
+            class="btn pulse max-w-lg-50 mx-auto"
+          >
+            QUERO OBTER ACESSO
+          </a>
+          <br />
+        </div>
       </div>
     </section>
-    <script>
-      const d = 862;
-      //scripts
-    </script>
     <script src="js/e.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
+    <script type="text/javascript">
+      const d = 862;
+
       let kaka = randomIntFromInterval(400, 700);
 
       document.addEventListener("DOMContentLoaded", function (e) {
@@ -916,9 +911,7 @@
           document.getElementById("watching-counter").innerText = kaka;
         }, 1e3);
       });
-    </script>
 
-    <script>
       window.onload = function () {
         var links = document.getElementsByTagName("a");
         for (var i = 0, n = links.length; i < n; i++) {
@@ -930,14 +923,69 @@
         }
       };
 
-      // setTimeout(() => {
-      //   var links1 = document.getElementsByClassName("closen");
-      //   for (var i = 0, n = links1.length; i < n; i++) {
-      //     links1[i].classList.remove("d-none");
-      //   }
-      // }, (20 * 60 + 45) * 1000); // 20:45 temporização da Call to Action (em milissegundos)
-    </script>
+      setTimeout(() => {
+        var links1 = document.getElementsByClassName("closen");
+        for (var i = 0, n = links1.length; i < n; i++) {
+          links1[i].classList.remove("d-none");
+        }
+      }, (20 * 60 + 45) * 1000); // 20:45 temporização da Call to Action (em milissegundos)
 
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+
+      document.addEventListener("DOMContentLoaded", function () {
+        /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+        var SECONDS_TO_DISPLAY = 20 * 60 + 45;
+        var CLASS_TO_DISPLAY = ".esconder";
+
+        /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+        var attempts = 0;
+        var elsHiddenList = [];
+        var elsDisplayed = false;
+        var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+        var alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`;
+        var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+        setTimeout(function () {
+          elsHiddenList = Array.prototype.slice.call(elsHidden);
+        }, 0);
+
+        var showHiddenElements = function () {
+          elsDisplayed = true;
+          elsHiddenList.forEach((e) => (e.style.display = "block"));
+          localStorage.setItem(alreadyDisplayedKey, true);
+        };
+
+        var startWatchVideoProgress = function () {
+          if (
+            typeof smartplayer === "undefined" ||
+            !(smartplayer.instances && smartplayer.instances.length)
+          ) {
+            if (attempts >= 10) return;
+            attempts += 1;
+            return setTimeout(function () {
+              startWatchVideoProgress();
+            }, 1000);
+          }
+
+          smartplayer.instances[0].on("timeupdate", () => {
+            if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+            if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY)
+              return;
+            showHiddenElements();
+          });
+        };
+
+        if (alreadyElsDisplayed === "true") {
+          setTimeout(function () {
+            showHiddenElements();
+          }, 100);
+        } else {
+          startWatchVideoProgress();
+        }
+      });
+    </script>
     <footer class="center px-lg-20 py-lg-1 py-sm-1 px-sm-2 white">
       <p><strong>Copyright 2022</strong><br />Todos os direitos reservados.</p>
       <div class="flex" style="justify-content: center">
@@ -945,10 +993,5 @@
         <a>&nbsp;|&nbsp; Políticas de Privacidade </a>
       </div>
     </footer>
-    <script>
-      document.addEventListener("contextmenu", (event) =>
-        event.preventDefault()
-      );
-    </script>
   </body>
 </html>

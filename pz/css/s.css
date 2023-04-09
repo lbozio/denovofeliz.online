@@ -59,6 +59,9 @@ a {
 p {
   color: var(--p-color);
 }
+.esconder {
+  display: none;
+}
 .d-block {
   display: block;
 }
