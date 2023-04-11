@@ -159,7 +159,7 @@
         </script>
         <script type="text/javascript">
           document.addEventListener("DOMContentLoaded", function () {
-            /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER **/
+            /* TEMPO DO PITCH */
             var SECONDS_TO_DISPLAY = 60;
             var CLASS_TO_DISPLAY = ".esconder";
 
@@ -232,7 +232,7 @@
       </div>
       <br />
       <!-- ============== UPSELL ============== -->
-      <div id="upsell" style="text-align: center">
+      <div id="upsell" style="text-align: center" class="section">
         <div class="esconder">
           <div style="text-align: center">
             <a
@@ -265,6 +265,12 @@
               type="text/javascript"
               src="https://checkout.payt.com.br/multiple-oneclickbuyscript/9RK5Z4.js"
             ></script>
+            <br />
+            <br />
+            <!-- LINK DO CHECKOUT -->
+            <a class="link" href="https://www.google.com.br"
+              >Não, vou perder essa oportunidade</a
+            >
           </div>
           <br />
           <div class="container">
@@ -272,6 +278,10 @@
               SE VOCÊ SAIR DESTA PÁGINA, VOCÊ PERDERÁ A OPORTUNIDADE DE ADQURIR
               O MÉTODO ANTIFLACIDEZ COM UM VALOR ESPECIAL...
             </h1>
+            <h1 class="upsell">Método Antiflacidez <s>R$400</s></h1>
+            <h1 class="upsell">Detox imediato <s>R$147</s></h1>
+            <h1 class="upsell-total">Total: <s>R$547</s></h1>
+            <img src="../pz/assets/total.jpeg" width="200" alt="" />
           </div>
         </div>
         <br />
