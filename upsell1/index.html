@@ -54,46 +54,6 @@
         <br />
       </div>
       <!-- ========= Contador ========== -->
-      <div id="countdown" class="container">
-        <div class="center">
-          <div class="counter-square" id="contador">
-            <h1 class="counter-text" id="tempo"></h1>
-            <br />
-          </div>
-          <!-- CÓDIGO DO CONTADOR -->
-          <script>
-            var contador = document.getElementById("contador");
-            var tempoElemento = document.getElementById("tempo");
-            var tempoRestante = parseInt(localStorage.getItem("tempoRestante"));
-            if (
-              isNaN(tempoRestante) ||
-              tempoRestante < 0 ||
-              tempoRestante > 600 // Contador em segundos (10 minutos)
-            ) {
-              tempoRestante = 600; // Contador em segundos (10 minutos)
-            }
-
-            var intervalo = setInterval(function () {
-              tempoRestante--;
-              localStorage.setItem("tempoRestante", tempoRestante.toString());
-
-              if (tempoRestante <= 0) {
-                clearInterval(intervalo);
-                contador.style.display = "none"; // Esconde o contador
-                localStorage.removeItem("tempoRestante"); // Remove a chave do LocalStorage
-              }
-
-              var minutos = Math.floor(tempoRestante / 60);
-              var segundos = tempoRestante % 60;
-              var minutosStr = minutos < 10 ? "0" + minutos : minutos;
-              var segundosStr = segundos < 10 ? "0" + segundos : segundos;
-
-              tempoElemento.innerHTML = minutosStr + ":" + segundosStr;
-            }, 1000);
-          </script>
-        </div>
-      </div>
-
       <!-- ========= TITULOS ========== -->
       <div id="titulos" class="section">
         <br />
