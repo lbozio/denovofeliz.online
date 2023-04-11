@@ -25,7 +25,6 @@ main {
 
 .pos-titulo-video {
   font-size: 15px;
-  font-family: "Montserrat", Sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   padding: 0;
@@ -58,7 +57,7 @@ main {
 }
 
 .titulo {
-  font-size: 40px;
+  font-size: 46px;
   font-weight: 800;
   color: #bf0a0a;
 }
@@ -66,7 +65,6 @@ main {
 .sub-titulo {
   font-size: 20px;
   font-weight: 800;
-  /* width: 800px; */
 }
 
 .sub-titulo-video {
@@ -305,7 +303,7 @@ html {
   margin: 0;
   padding: 0 !important;
   overflow-x: hidden;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", Sans-serif;
   background-color: var(--body-bg);
 }
 
