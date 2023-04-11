@@ -5,6 +5,13 @@
     <title>Program D21</title>
     <link rel="stylesheet" href="style.css" />
     <link
+      rel="stylesheet"
+      id="google-fonts-1-css"
+      href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.1.1"
+      media="all"
+    />
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect" />
+    <link
       rel="prerender"
       href="https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/embed.html"
     />
@@ -47,195 +54,90 @@
       <div id="banner">
         <div class="banner py-lg-1 py-sm-1 px-sm-1 center">
           <div class="center">
-            <strong>ETAPA 1 de 2:</strong> Atenção, não feche ou atualize essa
-            página, isso pode gerar erros na sua compra!
+            <strong>CUIDADO:</strong> não feche está página ainda...
           </div>
         </div>
         <br />
       </div>
-      <!-- ========= Contador ========== -->
-      <div id="countdown" class="container">
-        <div class="center">
-          <div class="counter-square" id="contador">
-            <h1 class="counter-text" id="tempo"></h1>
-            <br />
-          </div>
-          <!-- CÓDIGO DO CONTADOR -->
-          <script>
-            var contador = document.getElementById("contador");
-            var tempoElemento = document.getElementById("tempo");
-            var tempoRestante = parseInt(localStorage.getItem("tempoRestante"));
-            if (
-              isNaN(tempoRestante) ||
-              tempoRestante < 0 ||
-              tempoRestante > 600 // Contador em segundos (10 minutos)
-            ) {
-              tempoRestante = 600; // Contador em segundos (10 minutos)
-            }
-
-            var intervalo = setInterval(function () {
-              tempoRestante--;
-              localStorage.setItem("tempoRestante", tempoRestante.toString());
-
-              if (tempoRestante <= 0) {
-                clearInterval(intervalo);
-                contador.style.display = "none"; // Esconde o contador
-                localStorage.removeItem("tempoRestante"); // Remove a chave do LocalStorage
-              }
-
-              var minutos = Math.floor(tempoRestante / 60);
-              var segundos = tempoRestante % 60;
-              var minutosStr = minutos < 10 ? "0" + minutos : minutos;
-              var segundosStr = segundos < 10 ? "0" + segundos : segundos;
-
-              tempoElemento.innerHTML = minutosStr + ":" + segundosStr;
-            }, 1000);
-          </script>
-        </div>
-      </div>
-
       <!-- ========= TITULOS ========== -->
       <div id="titulos" class="section">
         <br />
         <div class="container">
-          <h1 class="titulo">ESPERE!</h1>
+          <img src="../pz/assets/stop.png" width="200" alt="" />
+
+          <h1 class="titulo">
+            OK. ENTENDI! VOCÊ ACHOU 97 REAIS MUITO CARO, CERTO?
+          </h1>
           <br />
           <h1 class="sub-titulo">
-            VOCE JÁ TEM ACESSO AO PROTOCOLO ZERO BARRIGA MAS A SUA COMPRA AINDA
-            NÃO ESTÁ 100% CONCLUÍDA...
+            Bem, com a sua permissão, eu gostaria de te oferecer algo de ainda
+            mais valor agora, porque eu realmente quero que você obtenha os
+            resultados que você merece!
           </h1>
           <br />
           <h1 class="sub-titulo-pequeno">
-            Você provavelmente só irá ver essa página uma única vez (para
-            sempre), veja esse vídeo abaixo com muito cuidado. É realmente muito
-            importante...
+            Portanto, vou fazer desta a decisão mais fácil que você já tomou na
+            sua vida... A ponto de se sentir realmente mal em deixar passar...
           </h1>
-        </div>
-      </div>
-      <!-- ========= VIDEO ========== -->
-      <div id="video" class="section">
-        <br />
-        <!-- AQUI ATÉ O FIM DO DIV É O LINK DA VTURB -->
-        <div
-          id="vid_6434de634c45d90008fc543f"
-          style="
-            position: relative;
-            width: 100%;
-            padding: 56.25% 0 0;
-            border: 1px solid #4adede;
-            box-shadow: 0 0 6px 3px rgb(74 222 222 / 33%);
-            border-radius: 4px;
-          "
-        >
-          <img
-            id="thumb_6434de634c45d90008fc543f"
-            src="https://images.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/thumbnail.jpg"
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              display: block;
-            "
-          />
-          <div
-            id="backdrop_6434de634c45d90008fc543f"
-            style="
-              position: absolute;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              -webkit-backdrop-filter: blur(5px);
-              backdrop-filter: blur(5px);
-            "
-          ></div>
-        </div>
-        <script type="text/javascript" id="scr_6434de634c45d90008fc543f">
-          var s = document.createElement("script");
-          (s.src =
-            "https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/player.js"),
-            (s.async = !0),
-            document.head.appendChild(s);
-        </script>
-        <script type="text/javascript">
-          document.addEventListener("DOMContentLoaded", function () {
-            /* TEMPO DO PITCH */
-            var SECONDS_TO_DISPLAY = 20;
-            var CLASS_TO_DISPLAY = ".esconder";
-
-            /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
-            var attempts = 0;
-            var elsHiddenList = [];
-            var elsDisplayed = false;
-            var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
-            var alreadyDisplayedKey = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`;
-            var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
-
-            setTimeout(function () {
-              elsHiddenList = Array.prototype.slice.call(elsHidden);
-            }, 0);
-
-            var showHiddenElements = function () {
-              elsDisplayed = true;
-              elsHiddenList.forEach((e) => (e.style.display = "block"));
-              localStorage.setItem(alreadyDisplayedKey, true);
-            };
-
-            var startWatchVideoProgress = function () {
-              if (
-                typeof smartplayer === "undefined" ||
-                !(smartplayer.instances && smartplayer.instances.length)
-              ) {
-                if (attempts >= 10) return;
-                attempts += 1;
-                return setTimeout(function () {
-                  startWatchVideoProgress();
-                }, 1000);
-              }
-
-              smartplayer.instances[0].on("timeupdate", () => {
-                if (elsDisplayed || smartplayer.instances[0].smartAutoPlay)
-                  return;
-                if (
-                  smartplayer.instances[0].video.currentTime <
-                  SECONDS_TO_DISPLAY
-                )
-                  return;
-                showHiddenElements();
-              });
-            };
-
-            if (alreadyElsDisplayed === "true") {
-              setTimeout(function () {
-                showHiddenElements();
-              }, 100);
-            } else {
-              startWatchVideoProgress();
-            }
-          });
-        </script>
-      </div>
-      <!-- ========== PROGRESS BAR ============= -->
-      <div id="progress-bar" class="section">
-        <br />
-        <div class="progress-container">
-          <div class="progress progress-striped active">
-            <div
-              role="progressbar "
-              style="width: 70%"
-              class="progress-bar progress-bar-success"
-            >
-              <span>75%</span>
-            </div>
-          </div>
+          <br />
+          <h1 class="sub-titulo">E como farei isso? Aqui está como...</h1>
+          <br />
+          <h1 class="sub-titulo-pequeno">
+            <strong class="strong">Parece loucura...</strong> <br /><br />
+            Mas <strong class="strong">VOU DIMINUIR</strong> o preço do Método
+            Antiflacidez para algo ridículo e adicionar + 1 PROGRAMA ESPECIAL no
+            seu pacote... Mas somente se você optar por aceitar esta oferta
+            única AGORA.
+          </h1>
+          <br />
+          <h1 class="sub-titulo">Por que estou fazendo isso?</h1>
+          <br />
+          <h1 class="sub-titulo-pequeno">
+            Porque eu não quero que algo como o preço seja a razão pela qual o
+            lindo corpo que você merece possa escorregar por entre os dedos para
+            sempre ... <br /><br />E além disso, acredito em entregar e dar a
+            você tanto valor que você ficará muito grata por realmente usar
+            esses métodos para mudar a sua vida! <br /><br />O objetivo aqui é
+            ajudar as mulheres em todos os lugares a transformarem suas vidas
+            para sempre.
+          </h1>
+          <br />
+          <h1 class="sub-titulo">
+            Então agora, você vai ter a oportunidade de ter acesso ao Método
+            Antiflacidez com um desconto especial e + 1 bônus gratuito...
+          </h1>
+          <br />
+          <h1 class="titulo-desconto">
+            De <s class="desconto">R$ 97,00</s> por apenas
+          </h1>
+          <br />
+          <h1 class="titulo-desconto">
+            <strong class="preco">R$ 47,00</strong> ou
+            <strong class="preco">11X de 5,08</strong>
+          </h1>
+          <br />
+          <h1 class="sub-titulo-pequeno">
+            Somente agora, aqui nesta página, ao fechar a página você perderá
+            essa chance para sempre!
+          </h1>
+          <br />
+          <h1 class="sub-titulo">
+            Olha, se você fizer as contas e se analisar os enormes benefícios
+            que ganhará ao longo de um ano, investindo apenas R$ 47 neste
+            “Pacote Especial” agora...
+            <br /><br />
+            Você vai perceber que você está gastando R$ 0,26 por dia!
+            <br /><br />
+            Isso não é nem o preço de um cafézinho...
+            <br /><br />
+            Aqui está um breve resumo do que você vai receber...
+          </h1>
         </div>
       </div>
       <br />
       <!-- ============== UPSELL ============== -->
       <div id="upsell" style="text-align: center" class="section">
-        <div class="esconder">
+        <div class="botao">
           <div style="text-align: center">
             <a
               class="pulse"
