@@ -4,6 +4,35 @@
     <!-- SCRIPTS VÃO AQUI -->
     <title>Program D21</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="prerender"
+      href="https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/embed.html"
+    />
+    <link
+      rel="preload"
+      href="https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/player.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="https://images.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/thumbnail.jpg"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/6434de504c45d90008fc543e/playlist.m3u8"
+      as="fetch"
+    />
+    <link rel="dns-prefetch" href="https://cdn.converteai.net" />
+    <link rel="dns-prefetch" href="https://scripts.converteai.net" />
+    <link rel="dns-prefetch" href="https://images.converteai.net" />
+    <link rel="dns-prefetch" href="https://api.vturb.com.br" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="robots" content="noindex" />
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -88,15 +117,18 @@
         <div style="padding: 56.25% 0 0 0; position: relative">
           <iframe
             allowfullscreen
-            title="Vídeo"
             src="https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/embed.html"
             id="ifr_6434de634c45d90008fc543f"
+            title="video"
             style="
               position: absolute;
               top: 0;
               left: 0;
               width: 100%;
               height: 100%;
+              border: 1px solid #4adede;
+              box-shadow: 0 0 6px 3px rgb(74 222 222 / 33%);
+              border-radius: 4px;
             "
             referrerpolicy="origin"
           ></iframe>
@@ -104,7 +136,7 @@
         <script type="text/javascript">
           document.addEventListener("DOMContentLoaded", function () {
             /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-            var SECONDS_TO_DISPLAY = 20;
+            var SECONDS_TO_DISPLAY = 60;
             var CLASS_TO_DISPLAY = ".esconder";
 
             /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
@@ -176,45 +208,47 @@
       </div>
       <br />
       <!-- ============== UPSELL ============== -->
-      <div id="upsell" style="text-align: center" class="section esconder">
-        <div style="text-align: center">
-          <a
-            class="pulse"
-            href="#"
-            payt_action="oneclick_buy"
-            data-object="R6DVY4-LGNVN4"
-            style="
-              background: rgb(40, 167, 69);
-              color: rgb(255, 255, 255);
-              padding: 17px;
-              text-decoration: none;
-              font-size: 20px;
-              font-family: sans-serif;
-              border-radius: 7px;
-              display: block;
-              margin: 10px auto;
-              width: 80%;
-            "
-          >
-            SIM! QUERO GARANTIR MINHA VAGA
-          </a>
+      <div id="upsell" style="text-align: center" class="section">
+        <div class="esconder">
+          <div style="text-align: center">
+            <a
+              class="pulse"
+              href="#"
+              payt_action="oneclick_buy"
+              data-object="R6DVY4-LGNVN4"
+              style="
+                background: rgb(40, 167, 69);
+                color: rgb(255, 255, 255);
+                padding: 17px;
+                text-decoration: none;
+                font-size: 20px;
+                font-family: sans-serif;
+                border-radius: 7px;
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+              "
+            >
+              SIM! QUERO GARANTIR MINHA VAGA
+            </a>
+            <br />
+            <select
+              payt_element="installment"
+              data-object="R6DVY4-LGNVN4"
+              class="select"
+            ></select>
+            <script
+              type="text/javascript"
+              src="https://checkout.payt.com.br/multiple-oneclickbuyscript/9RK5Z4.js"
+            ></script>
+          </div>
           <br />
-          <select
-            payt_element="installment"
-            data-object="R6DVY4-LGNVN4"
-            class="select"
-          ></select>
-          <script
-            type="text/javascript"
-            src="https://checkout.payt.com.br/multiple-oneclickbuyscript/9RK5Z4.js"
-          ></script>
-        </div>
-        <br />
-        <div class="container">
-          <h1 class="pos-titulo-video">
-            SE VOCÊ SAIR DESTA PÁGINA, VOCÊ PERDERÁ A OPORTUNIDADE DE ADQURIR O
-            MÉTODO ANTIFLACIDEZ COM UM VALOR ESPECIAL...
-          </h1>
+          <div class="container">
+            <h1 class="pos-titulo-video">
+              SE VOCÊ SAIR DESTA PÁGINA, VOCÊ PERDERÁ A OPORTUNIDADE DE ADQURIR
+              O MÉTODO ANTIFLACIDEZ COM UM VALOR ESPECIAL...
+            </h1>
+          </div>
         </div>
         <br />
       </div>
