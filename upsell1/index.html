@@ -114,29 +114,53 @@
       <!-- ========= VIDEO ========== -->
       <div id="video" class="section">
         <br />
-        <div style="padding: 56.25% 0 0 0; position: relative">
-          <iframe
-            allowfullscreen
-            src="https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/embed.html"
-            id="ifr_6434de634c45d90008fc543f"
-            title="video"
+        <div
+          id="vid_6434de634c45d90008fc543f"
+          style="
+            position: relative;
+            width: 100%;
+            padding: 56.25% 0 0;
+            border: 1px solid #4adede;
+            box-shadow: 0 0 6px 3px rgb(74 222 222 / 33%);
+            border-radius: 4px;
+          "
+        >
+          <img
+            id="thumb_6434de634c45d90008fc543f"
+            src="https://images.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/thumbnail.jpg"
             style="
               position: absolute;
               top: 0;
               left: 0;
               width: 100%;
               height: 100%;
-              border: 1px solid #4adede;
-              box-shadow: 0 0 6px 3px rgb(74 222 222 / 33%);
-              border-radius: 4px;
+              object-fit: cover;
+              display: block;
             "
-            referrerpolicy="origin"
-          ></iframe>
+          />
+          <div
+            id="backdrop_6434de634c45d90008fc543f"
+            style="
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              -webkit-backdrop-filter: blur(5px);
+              backdrop-filter: blur(5px);
+            "
+          ></div>
         </div>
+        <script type="text/javascript" id="scr_6434de634c45d90008fc543f">
+          var s = document.createElement("script");
+          (s.src =
+            "https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/6434de634c45d90008fc543f/player.js"),
+            (s.async = !0),
+            document.head.appendChild(s);
+        </script>
         <script type="text/javascript">
           document.addEventListener("DOMContentLoaded", function () {
             /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-            var SECONDS_TO_DISPLAY = 60;
+            var SECONDS_TO_DISPLAY = 30;
             var CLASS_TO_DISPLAY = ".esconder";
 
             /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
@@ -208,7 +232,7 @@
       </div>
       <br />
       <!-- ============== UPSELL ============== -->
-      <div id="upsell" style="text-align: center" class="section">
+      <div id="upsell" style="text-align: center">
         <div class="esconder">
           <div style="text-align: center">
             <a
@@ -217,7 +241,7 @@
               payt_action="oneclick_buy"
               data-object="R6DVY4-LGNVN4"
               style="
-                background: rgb(40, 167, 69);
+                background: #e67e22;
                 color: rgb(255, 255, 255);
                 padding: 17px;
                 text-decoration: none;
