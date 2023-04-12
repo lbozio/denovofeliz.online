@@ -17,6 +17,15 @@ main {
   flex: 1;
 }
 
+.video {
+  width: 99%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .upsell {
   font-size: 12px;
   font-weight: 600;
@@ -69,7 +78,7 @@ main {
   margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  width: 300px;
+  width: 90%;
 }
 
 .select {
@@ -99,35 +108,20 @@ main {
 .sub-titulo {
   font-size: 18px;
   font-weight: 800;
+  width: 90%;
 }
 
 .sub-titulo-video {
   font-size: 15px;
   font-weight: 500;
+  width: 90%;
 }
 
 .sub-titulo-pequeno {
   font-size: 12px;
+  width: 90%;
   font-weight: 500;
   /* width: 700px; */
-}
-
-.counter-square {
-  width: 80px;
-  height: 80px;
-  background-color: #333;
-  border-style: solid;
-  border-color: #c0c0c0;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.counter-text {
-  color: #fff;
-  font-size: 1.5rem;
-  margin: 0;
 }
 
 .progress-container {

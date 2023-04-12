@@ -48,12 +48,6 @@ main {
   width: 80%;
 }
 
-@media screen and (max-width: 767px) {
-  .elemento {
-    width: 50%; /* para dispositivos móveis */
-  }
-}
-
 .preco {
   font-weight: 900;
   color: #61ce70;
