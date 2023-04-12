@@ -202,6 +202,7 @@
       <div id="upsell" style="text-align: center" class="section">
         <div class="esconder">
           <div style="text-align: center">
+            <!-- Ajustar data-object -->
             <a
               class="pulse"
               href="#"
@@ -223,6 +224,7 @@
               SIM! QUERO GARANTIR MINHA VAGA
             </a>
             <br />
+            <!-- Ajustar data-object -->
             <select
               payt_element="installment"
               data-object="R6DVY4-LGNVN4"
@@ -270,17 +272,5 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript">
-      window.onload = function () {
-        var links = document.getElementsByTagName("a");
-        for (var i = 0, n = links.length; i < n; i++) {
-          var href =
-            links[i].href.trim() +
-            (links[i].href.indexOf("?") > 0 ? "&" : "?") +
-            document.location.search.replace("?", "").toString();
-          links[i].href = href;
-        }
-      };
-    </script>
   </body>
 </html>

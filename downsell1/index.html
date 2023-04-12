@@ -172,6 +172,7 @@
       <div id="upsell" style="text-align: center" class="section">
         <div class="botao">
           <div style="text-align: center">
+            <!-- Ajustar data-object -->
             <a
               href="#"
               payt_action="oneclick_buy"
@@ -192,6 +193,7 @@
               SIM! QUERO GARANTIR MINHA VAGA
             </a>
             <br />
+            <!-- Ajustar data-object -->
             <select
               payt_element="installment"
               data-object="RW99XR-LY9VB4"
@@ -263,17 +265,5 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript">
-      window.onload = function () {
-        var links = document.getElementsByTagName("a");
-        for (var i = 0, n = links.length; i < n; i++) {
-          var href =
-            links[i].href.trim() +
-            (links[i].href.indexOf("?") > 0 ? "&" : "?") +
-            document.location.search.replace("?", "").toString();
-          links[i].href = href;
-        }
-      };
-    </script>
   </body>
 </html>
