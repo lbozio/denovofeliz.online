@@ -35,45 +35,7 @@
       href="https://cdn.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/6434de504c45d90008fc543e/playlist.m3u8"
       as="fetch"
     />
-    <script>
- function addSrc() {
-          // Início da config
-          var keyOnCurrentUrl = '_o'; //nome da chave a ser procurada na url da página
-          var newKeyOnLinks = '_o'; //nome da chave a ser inserida nos links
-          var links = window.document.querySelectorAll("a"); //selector pro escopo do script
-          var previousSrc = window.location.search.match(/_o=(.*?)(:?\&|#|$)/);
-          var sourceValue = !previousSrc ? '' : previousSrc[1]; //valor a ser inserido
-          // Fim da Config
-          //
-          for (var i in links) {
-              if (typeof links[i].href !== "string") return;
-              links[i].href = links[i].href.replace(
-                  /(^.*?)(?:\?(.*?))?(#.*|$)/,
-                  function (match, urlAndPath, originalQueryString, anchor) {
-                      var newQueryString = [];
-                      var keyExistsOnCurrentUrl = false;
-                      if (typeof originalQueryString === "string") {
-                          newQueryString = originalQueryString.split("&").reduce(function (queryString, queryPart) {
-                              if (!queryPart.startsWith(keyOnCurrentUrl + '='))
-                                  queryString.push(queryPart)
-                              else {
-                                  keyExistsOnCurrentUrl = true;
-                                  var data = queryPart.split("=")
-                                  queryString.push(newKeyOnLinks + "=" + sourceValue + "_" + data[1]);
-                              }
-                              return queryString;
-                          }, []);
-                      }
-                      if (!keyExistsOnCurrentUrl) {
-                          newQueryString.push(newKeyOnLinks + "=" + sourceValue);
-                      }
-                      return urlAndPath + "?" + newQueryString.join("&") + anchor;
-                  }
-              );
-          }
-      }
-window.addEventListener("load", addSrc);
-</script>
+   
     <link rel="dns-prefetch" href="https://cdn.converteai.net" />
     <link rel="dns-prefetch" href="https://scripts.converteai.net" />
     <link rel="dns-prefetch" href="https://images.converteai.net" />
@@ -209,6 +171,45 @@ window.addEventListener("load", addSrc);
           <a>Termos de Uso &nbsp;|&nbsp; Políticas de Privacidade</a>
         </div>
       </div>
+       <script>
+ function addSrc() {
+          // Início da config
+          var keyOnCurrentUrl = '_o'; //nome da chave a ser procurada na url da página
+          var newKeyOnLinks = '_o'; //nome da chave a ser inserida nos links
+          var links = window.document.querySelectorAll("a"); //selector pro escopo do script
+          var previousSrc = window.location.search.match(/_o=(.*?)(:?\&|#|$)/);
+          var sourceValue = !previousSrc ? '' : previousSrc[1]; //valor a ser inserido
+          // Fim da Config
+          //
+          for (var i in links) {
+              if (typeof links[i].href !== "string") return;
+              links[i].href = links[i].href.replace(
+                  /(^.*?)(?:\?(.*?))?(#.*|$)/,
+                  function (match, urlAndPath, originalQueryString, anchor) {
+                      var newQueryString = [];
+                      var keyExistsOnCurrentUrl = false;
+                      if (typeof originalQueryString === "string") {
+                          newQueryString = originalQueryString.split("&").reduce(function (queryString, queryPart) {
+                              if (!queryPart.startsWith(keyOnCurrentUrl + '='))
+                                  queryString.push(queryPart)
+                              else {
+                                  keyExistsOnCurrentUrl = true;
+                                  var data = queryPart.split("=")
+                                  queryString.push(newKeyOnLinks + "=" + sourceValue + "_" + data[1]);
+                              }
+                              return queryString;
+                          }, []);
+                      }
+                      if (!keyExistsOnCurrentUrl) {
+                          newQueryString.push(newKeyOnLinks + "=" + sourceValue);
+                      }
+                      return urlAndPath + "?" + newQueryString.join("&") + anchor;
+                  }
+              );
+          }
+      }
+window.addEventListener("load", addSrc);
+</script>
     </footer>
   </body>
 </html>
