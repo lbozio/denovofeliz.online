@@ -64,7 +64,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-        <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -480,7 +480,49 @@
         </h2>
       </div>
       <div class="mt-lg-5 mt-sm-3 mx-auto center max-w-lg-60">
-<div id="vid_62bf928054a6bc000a04d3dd" style="position:relative;width:100%;padding: 56.25% 0 0;border: 1px solid #4adede;box-shadow: 0 0 6px 3px rgb(74 222 222 / 33%);border-radius: 4px"><img id="thumb_62bf928054a6bc000a04d3dd" src="https://images.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/62bf928054a6bc000a04d3dd/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_62bf928054a6bc000a04d3dd" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_62bf928054a6bc000a04d3dd">var s=document.createElement("script");s.src="https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/62bf928054a6bc000a04d3dd/player.js",s.async=!0,document.head.appendChild(s);</script>
+        <div
+          id="vid_62bf928054a6bc000a04d3dd"
+          style="
+            position: relative;
+            width: 100%;
+            padding: 56.25% 0 0;
+            border: 1px solid #4adede;
+            box-shadow: 0 0 6px 3px rgb(74 222 222 / 33%);
+            border-radius: 4px;
+          "
+        >
+          <img
+            id="thumb_62bf928054a6bc000a04d3dd"
+            src="https://images.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/62bf928054a6bc000a04d3dd/thumbnail.jpg"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
+            "
+          />
+          <div
+            id="backdrop_62bf928054a6bc000a04d3dd"
+            style="
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              -webkit-backdrop-filter: blur(5px);
+              backdrop-filter: blur(5px);
+            "
+          ></div>
+        </div>
+        <script type="text/javascript" id="scr_62bf928054a6bc000a04d3dd">
+          var s = document.createElement("script");
+          (s.src =
+            "https://scripts.converteai.net/906522e7-03c4-4f2a-9735-089350da2e69/players/62bf928054a6bc000a04d3dd/player.js"),
+            (s.async = !0),
+            document.head.appendChild(s);
+        </script>
         <p class="audio strong"></p>
       </div>
     </section>
@@ -890,7 +932,7 @@
           <br />
           <a
             href="https://pay.kiwify.com.br/Ai11Mvg"
-            class="btn pulse max-w-lg-50 mx-auto"
+            class="btn pulse max-w-lg-50 mx-auto call-to-action-link"
           >
             QUERO O PROTOCOLO PARA SECAR
           </a>
@@ -912,6 +954,17 @@
           document.getElementById("watching-counter").innerText = kaka;
         }, 1e3);
       });
+
+      window.onload = function () {
+        smartplayer.instances[0].on("loadeddata", () => {
+          const buttonLinks = document.querySelectorAll(".call-to-action-link");
+          const queryString = window.location.search;
+
+          buttonLinks.forEach((buttonLink) => {
+            buttonLink.href += queryString;
+          });
+        });
+      };
 
       setTimeout(() => {
         var links1 = document.getElementsByClassName("closen");
