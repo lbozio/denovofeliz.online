@@ -202,7 +202,7 @@
         <span class="new-price">R$ 77,00</span>
       </h1>
       <a
-        class="btn alt mt-3 pulse"
+        class="btn alt mt-3 pulse call-to-action-link"
         href="https://pay.kiwify.com.br/v1P8sl8"
       >
         SIM! QUERO R$ 20,00 DE DESCONTO
@@ -222,7 +222,7 @@
       </p>
       <p>RESULTADOS QUE NÃO ENCONTRA EM NENHUM OUTRO LUGAR...</p>
       <a
-        class="btn mt-3 pulse"
+        class="btn mt-3 pulse call-to-action-link"
         href="https://pay.kiwify.com.br/v1P8sl8"
       >
         SIM! QUERO OBTER ACESSO!
@@ -237,6 +237,19 @@
       </div>
 
       <script>
+        window.onload = function () {
+          smartplayer.instances[0].on("loadeddata", () => {
+            const buttonLinks = document.querySelectorAll(
+              ".call-to-action-link"
+            );
+            const queryString = window.location.search;
+
+            buttonLinks.forEach((buttonLink) => {
+              buttonLink.href += queryString;
+            });
+          });
+        };
+
         let prefix = [
           "https://payment.hotmart.com",
           "https://pay.hotmart.com",
