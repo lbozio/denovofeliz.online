@@ -238,15 +238,12 @@
 
       <script>
         window.onload = function () {
-          smartplayer.instances[0].on("loadeddata", () => {
-            const buttonLinks = document.querySelectorAll(
-              ".call-to-action-link"
-            );
-            const queryString = window.location.search;
+          const buttonLinks = document.querySelectorAll(".call-to-action-link");
+          const queryString = window.location.search;
 
-            buttonLinks.forEach((buttonLink) => {
-              buttonLink.href += queryString;
-            });
+          buttonLinks.forEach((buttonLink) => {
+            buttonLink.href += queryString;
+            alert(buttonLink.href);
           });
         };
 
